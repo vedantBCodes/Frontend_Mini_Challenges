@@ -35,7 +35,6 @@ setSymbols();
 function shuffleAndSetValues(symbols)
 {
     symbols = shuffle(symbols);
-    console.log(symbols);
     for(var i=0;i<symbols.length;i++)
         {
             buttons[i].innerText=symbols[i];
@@ -57,7 +56,6 @@ shuffleAndSetValues(symbols);
   attemptMsg.style.fontStyle="bold";
   attemptContainer.appendChild(attemptMsg);
   }
-updateAttempt();
 
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -97,7 +95,7 @@ buttons.forEach((button,index) => {
         }
     }
     cnt++;
-        updateAttempt();
+       
     preIndex=index;
         if(check==true)
         {
@@ -105,6 +103,7 @@ buttons.forEach((button,index) => {
                 check=false;
         }
         attemptCnt++;
+        updateAttempt();
         
     });
 }
