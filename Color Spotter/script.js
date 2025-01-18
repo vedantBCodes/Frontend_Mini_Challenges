@@ -2,9 +2,16 @@ var mainBox=document.querySelector(".mainBox");
 var scoreBoard=document.querySelector("#score");
 var maxScoreBoard=document.querySelector("#maxScore");
 var size=3;
-var maxScore;
 var check=true;
 var score=0;
+var initialValue=0;
+
+if (localStorage.getItem('maxScore5') === null) {
+    localStorage.setItem('maxScore5', initialValue); //This will initalize the value of maxScore only once in your browser
+    // console.log('Value initialized in localStorage.');
+    console.log(localStorage.getItem('maxScore5'));
+  }
+
 function getRandomInt(min, max)
 {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -21,8 +28,8 @@ function setBox(size)
 {
     var randomInt=getRandomInt(1,size*size);
 
-    var w_size=(100/size)-0.3;
-    var h_size=(100/size)-0.3;
+    var w_size=(100/size)-0.7;
+    var h_size=(100/size)-0.7;
     var randomColor=getRandomRGBColor();
     for(var i=1;i<=size*size;i++)
         {
@@ -62,12 +69,7 @@ btns.forEach((button) => {
             mainBox.innerHTML="";
             size++;
             score++;
-            maxScore = +localStorage.getItem('maxScore');
-            maxScore = score;
-            localStorage.setItem('maxScore', maxScore);
-            console.log(maxScore);
             updateScore();
-            updateMaxScore()
             setBox(size);
             clickUniqueBtn();
         }
@@ -80,9 +82,9 @@ btns.forEach((button) => {
             setTimeout(() => {
             mainBox.innerHTML="";
             size=3;
+            updateMaxScore();
             score=0;
             updateScore();
-            updateMaxScore()
             setBox(size);
             clickUniqueBtn();
               }, 1500);
@@ -107,8 +109,23 @@ function shakeTheGrid(callback) {
 }
 function updateMaxScore()
 {
-    maxScoreBoard.innerHTML=`<b>Max Score :${maxScore}</b>`;
+    var temp=localStorage.getItem('maxScore5');
+        if (score > temp) 
+        {
+          temp = score;
+          console.log(temp);
+          localStorage.setItem('maxScore5', temp);
+          maxScoreBoard.innerHTML=`<b>Max Score :${temp}</b>`;
+        }
+        maxScoreBoard.innerHTML=`<b>Max Score :${temp}</b>`;
+      
+}
+function setInitialMaxScoreValue()
+{
+    var temp2=localStorage.getItem('maxScore5');
+    maxScoreBoard.innerHTML=`<b>Max Score :${temp2}</b>`;
 }
 
 setBox(size);
+setInitialMaxScoreValue();
 clickUniqueBtn();
