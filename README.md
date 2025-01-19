@@ -9,3 +9,5 @@ Here i will be providing the links of all the  deployed challenges.
 4.Match pair - matchpair04.netlify.app
 
 5.Color Spotter - colorspotter5.netlify.app
+
+6.Pixel Art - pixelart06.netlify.app
