@@ -8,7 +8,20 @@ function getRandomRGBColor()
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-function setBtnContainer() 
+function setBtnContainer1() 
+{
+  var w_size = 100 / 20 - 0.7;
+  var h_size = 100 / 15 - 0.7;
+  for (var i = 1; i <= 391; i++) {
+    var btn1 = document.createElement("button");
+    btn1.style.width = `${w_size}%`;
+    btn1.style.height = `${h_size}%`;
+    btn1.style.margin = "-2px 0px";
+    btn1.classList.add("colorlessBtn");
+    btncontainer.appendChild(btn1);
+  }
+}
+function setBtnContainer2() 
 {
   var w_size = 100 / 25 - 0.7;
   var h_size = 100 / 20 - 0.7;
@@ -22,7 +35,23 @@ function setBtnContainer()
   }
 }
 
-function setColorRow() 
+function setColorRow1() 
+{
+  var w_size = 100 / 20 - 0.7;
+  var h_size = 100 / 15 - 0.7;
+  for (var i = 1; i <= 23; i++) {
+    var randomColor = getRandomRGBColor();
+    var btn2 = document.createElement("button");
+    btn2.style.backgroundColor = `${randomColor}`;
+    btn2.style.width = `${w_size}%`;
+    btn2.style.height = `${h_size}%`;
+    btn2.style.margin = "-2px 0px";
+    btn2.className = "colorBtn";
+    btncontainer.appendChild(btn2);
+  }
+}
+
+function setColorRow2() 
 {
   var w_size = 100 / 25 - 0.7;
   var h_size = 100 / 20 - 0.7;
@@ -37,9 +66,19 @@ function setColorRow()
     btncontainer.appendChild(btn2);
   }
 }
+const screenWidth = window.innerWidth;  //Applying js according to different screen size
 
-setBtnContainer();
-setColorRow();
+  if (screenWidth <= 500) 
+    {
+    setBtnContainer1();
+    setColorRow1();
+  } 
+  else  if (screenWidth > 500) 
+  {
+    setBtnContainer2();  
+    setColorRow2();
+  }
+
 
 var colorBtns = document.querySelectorAll(".colorBtn");
 var colorlessBtns = document.querySelectorAll(".colorlessBtn");
@@ -102,5 +141,3 @@ resetBtn.addEventListener('click',()=>{
         colorlessBtns[i].style.backgroundColor="";
     }
 })
-
-
