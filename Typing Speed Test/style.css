@@ -1,0 +1,39 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.container
+{
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+    height: 33vh;
+    position: relative;
+    top: 120px;
+}
+h1
+{
+    padding: 15px 0px;
+    text-align: center;
+    box-shadow: 0 0 5px black;
+    background-color: rgb(237, 242, 246);
+}
+p{
+    font-size: 25px;
+}
+button
+{
+   padding: 10px 20px;
+   font-size: 20px;
+}
+#statement
+{
+    background-color: white;
+    border-radius: 5px;
+    font-size: 25px;
+}
