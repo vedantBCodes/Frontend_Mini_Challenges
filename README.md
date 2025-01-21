@@ -11,3 +11,5 @@ Here i will be providing the links of all the  deployed challenges.
 5.Color Spotter - colorspotter5.netlify.app
 
 6.Pixel Art - pixelart06.netlify.app
+
+7.Typing speed test - typingspeed07.netlify.app
