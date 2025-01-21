@@ -26,13 +26,19 @@ h1
 p{
     font-size: 25px;
 }
+h3{
+    font-size: 25px;
+}
 button
 {
    padding: 10px 20px;
    font-size: 20px;
 }
-#statement
+input
 {
+    width: 50vw;
+    border: 2px solid black;
+    padding: 5px;
     background-color: white;
     border-radius: 5px;
     font-size: 25px;
