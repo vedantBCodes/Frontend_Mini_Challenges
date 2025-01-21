@@ -16,7 +16,7 @@ function initialization()
     cnt=0;
     letterCnt=0;
     time=10;
-    stopTime=true;
+    stopTime=false;
     timeStatement.innerText=`${time} seconds`;
     resetBtn.disabled=true;
 }
@@ -27,16 +27,15 @@ function timeFunction()
 {
    
 if (time >= 1 ) 
-{ // Replace with your loop condition
+{ 
     setTimeout(()=>
     {
         time--;
         timeStatement.innerText=`${time} seconds`;
         if(time==0)
             {
-              disableBtn();
               resetBtn.disabled=false;
-            //   timeOut=true;
+              stopTime=true;
               timeStatement.innerText=`Typing speed : ${letterCnt/10} lps (letters per seconds)`;
             }
         timeStatement.style.fontSize="25px";
@@ -45,32 +44,14 @@ if (time >= 1 )
 }
 }
 
-function disableBtn()
-{
-    for(var i=0;i<buttons.length;i++)
-    {
-        buttons[i].disabled=true;
-        // buttons[i].style.backgroundColor='white';
-    }
-}
-
-function enableBtn()
-{
-    for(var i=0;i<buttons.length;i++)
-    {
-        buttons[i].disabled=false;
-        
-    }
-}
 buttons.forEach((button) =>{
     button.addEventListener('click',()=>{
         cnt++;
         if(cnt==1)
         {
             timeFunction();
-            stopTime=false;
         }
-        if(button.innerText==statementBox.placeholder[0])
+        if(button.innerText==statementBox.placeholder[0] && stopTime==false)
         {
             statementBox.placeholder = statementBox.placeholder.slice(1);
             letterCnt++;
@@ -78,21 +59,17 @@ buttons.forEach((button) =>{
                 {
                     statementBox.placeholder = statementBox.placeholder.slice(1);
                 }
-            var x=statementBox.placeholder[0];
-            statementBox.placeholder = statementBox.placeholder.slice(1);
-            // x = <b>x</b>;
-            statementBox.placeholder = x + statementBox.placeholder ;
         }
     });
 });
+
 document.addEventListener('keydown',(e)=>{
     cnt++;
     if(cnt==1)
     {
         timeFunction();
-        stopTime=false;
     }
-    if(e.key==statementBox.placeholder[0])
+    if(e.key==statementBox.placeholder[0] && stopTime==false)
     {
         statementBox.placeholder = statementBox.placeholder.slice(1);
         letterCnt++;
