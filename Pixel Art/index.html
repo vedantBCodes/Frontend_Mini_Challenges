@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <title>Pixel Arts</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   
     <h1>Pixel Art</h1>
     <div class="container">
         <p>Click on a color to select and paint empty cells. Click and hold then move mouse to color the cells continuously.
         </p>
         <p>Double click to remove color from a cell .</p>
+        <div id="capture-area">
         <div class="btnContainer"></div>
+        </div>
     <div>
-        <button id="reset">Reset</button>
+        <button id="reset">Reset</button> <br> 
     </div>
 </div>
+
+<div id="captureDiv"><button id="capture">Download your Art</button></div>
     <script src="script.js"></script>
 
 </body>

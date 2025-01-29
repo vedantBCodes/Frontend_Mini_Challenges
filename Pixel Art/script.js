@@ -25,7 +25,7 @@ function setBtnContainer2()
 {
   var w_size = 100 / 25 - 0.7;
   var h_size = 100 / 20 - 0.7;
-  for (var i = 1; i <= 600; i++) {
+  for (var i = 1; i <= 540; i++) {
     var btn1 = document.createElement("button");
     btn1.style.width = `${w_size}%`;
     btn1.style.height = `${h_size}%`;
@@ -141,3 +141,17 @@ resetBtn.addEventListener('click',()=>{
         colorlessBtns[i].style.backgroundColor="";
     }
 })
+
+// Code to download a screenshot of your pixel art 
+
+document.getElementById("capture").addEventListener("click", function () {
+  html2canvas(document.getElementById("capture-area")).then(canvas => {
+      let imgURL = canvas.toDataURL("image/png");
+      let link = document.createElement("a");
+      link.href = imgURL;
+      link.download = "screenshot.png";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+  });
+});

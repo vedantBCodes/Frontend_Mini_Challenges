@@ -27,7 +27,7 @@ p
     background-color: black;
     color: white;
     position: relative;
-    bottom: 72px;
+    bottom: 132px;
     border-radius: 3px;
 }
 #reset:hover
@@ -45,6 +45,19 @@ h1
     box-shadow: 0 0 3px black;
 }
 
+#capture
+{
+    padding: 6px;
+}
+#captureDiv
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 130px;
+}
 @media (max-width: 500px) 
 {
 p
@@ -63,8 +76,7 @@ p
     background-color: black;
     color: white;
     position: relative;
-    /* top: 40px; */
-    bottom: 40px;
+    bottom: 100px;
     border-radius: 3px;
 }
 #reset:hover
@@ -72,5 +84,15 @@ p
     background-color: white;
     color: black;
     transition: 1s;
+}
+#captureDiv
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 95px;
+    left: 0px;
 }
 }
