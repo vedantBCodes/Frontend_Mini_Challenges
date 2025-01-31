@@ -1,0 +1,84 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body
+{
+    width: 100vw;
+    height: 100vh;
+}
+.container
+{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+button
+{
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+p
+{
+    font-size: 20px;
+}
+.btnContainer
+{
+    width: 40vw;
+    height: 57vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: -15px;
+}
+main
+{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+h1
+{
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    text-align: center;
+    color: rgb(178, 185, 183);
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    box-shadow: 0 2px 2px 2px rgb(215, 211, 206);
+    margin-bottom: 20px;
+}
+.nextBtnContainer
+{
+    height: 10vh;
+}
+.levelContainer
+{
+    margin-top: 15px;
+    height: 5vh;
+}
+.attemptContainer
+{
+    height: 10vh;
+}
+button:disabled {
+    opacity: 1;  /* Keep full visibility */
+    color: inherit;
+    background: inherit;
+    cursor: not-allowed; /* Optional */
+}
