@@ -1,14 +1,16 @@
 Here i will be providing the links of all the  deployed challenges.
 
-1.Counter - counternetlify.netlify.app
+1. [Counter](https://counternetlify01.netlify.app)
+
+1.Counter - counternetlify01.netlify.app
 
 2.GuessingGame - guessing02.netlify.app
 
-3.Star Rating -
+3.Star Rating -  ratingstar03.netlify.app
 
 4.Match pair - matchpair04.netlify.app
 
-5.Color Spotter - colorspotter5.netlify.app
+5.Color Spotter - colorspotter05.netlify.app
 
 6.Pixel Art - pixelart06.netlify.app
 
