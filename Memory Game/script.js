@@ -1,10 +1,13 @@
 var startBtn=document.querySelector('#startBtn');
-var homeContainer=document.querySelector('.container');
+var homeContainer=document.querySelector('.homeContainer');
 var containerBox=document.querySelector('.btnContainer');
 var levelContainer=document.querySelector('.levelContainer');
 var nextBtnContainer=document.querySelector('.nextBtnContainer');
 var attemptContainer=document.querySelector('.attemptContainer');
 var levelStatement=document.createElement('p');
+var gameOverStatement=document.createElement('p');
+var main=document.querySelector('main');
+var homeBtn=document.createElement('button');
 var size=3;
 var level=1;
 var numberOfButtons;
@@ -12,7 +15,7 @@ var numberOfColoredButtons=4;
 var attempts=5;
 function createLevelContainer()
 {
-    levelStatement.innerText=`Level : ${level}`;
+    levelStatement.innerText=`Level : ${level}` ;
     levelStatement.style.fontSize='35px';
     levelContainer.appendChild(levelStatement);
 }
@@ -49,13 +52,11 @@ function createGameContainer()
 function colorRandomButtons()
 {
     var btns=document.querySelectorAll('.btnContainer > button');
-    console.log(btns);
     numberOfButtons=size*size;
 
     // Example: Generate n unique numbers between 1 and 9 (n- number of colored buttons)
     let randomNumbers = getRandomNumbers(0, numberOfButtons-1, numberOfColoredButtons);
-    console.log(randomNumbers);
-
+    
     for(var i=0;i<numberOfButtons;i++)
         {
             for(var j=0;j<randomNumbers.length;j++)
@@ -102,32 +103,83 @@ function addNextBtn()
         level++;
         numberOfColoredButtons++;
         resetAll();
-
     });
 
+}
+
+function addHomeBtn()
+{
+    nextBtnContainer.innerHTML='';
+    homeBtn.innerText='Home';
+    nextBtnContainer.appendChild(homeBtn);
+    homeBtn.addEventListener('click' , () =>{
+        size=3;
+        level=1
+        numberOfColoredButtons=4;
+        attempts=5;
+        addHomePage()
+    });
+}
+
+function addHomePage()
+{
+    
+    levelContainer.innerHTML='';
+    attemptContainer.innerHTML='';
+    containerBox.innerHTML='';
+    gameOverStatement.innerHTML='';
+    nextBtnContainer.innerHTML='';
+    homeContainer.style.display = "block";
+    homeContainer.style.display='flex';
+    homeContainer.style.flexDirection='column';
+    homeContainer.style.justifyContent='center';
+    homeContainer.style.alignItems='center';
+
+}
+
+function gameOver()
+{
+    
+    gameOverStatement.innerText='Game Over';
+    gameOverStatement.classList.add('gameOver');
+    main.appendChild(gameOverStatement);
+    addHomeBtn();
 }
 function clickTheColoredBtn()
 {
     var cnt=0;
+    var diableBtns=false;
     var btns=document.querySelectorAll('.btnContainer > button');
     btns.forEach((button) => {
         button.addEventListener('click', () => 
         {
-             if(button.classList.contains('colored'))
+             if(button.classList.contains('colored') && diableBtns==false)
                 {
                     button.style.backgroundColor='black';
                     button.disabled='true';
                     cnt++;
                 }  
-              else
+              else if(diableBtns==false)
               {
                 attempts--;
-                attemptContainer.removeChild(attemptContainer.lastElementChild);
-                
-              }
+                attemptContainer.lastElementChild.classList.add('shrink');
+                setTimeout(() =>{
+                    attemptContainer.removeChild(attemptContainer.lastElementChild);
+
+                },500);
+                setTimeout(() =>{
+                if(attemptContainer.childElementCount==0)
+                {
+                    diableBtns=true;
+                    gameOver();
+                }
+            },700);
+             }
+              
             if(cnt==numberOfColoredButtons)
                {
                    addNextBtn();
+                   diableBtns=true;
                }
         });
     });

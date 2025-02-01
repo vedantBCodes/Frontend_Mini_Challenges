@@ -10,7 +10,7 @@ body
     width: 100vw;
     height: 100vh;
 }
-.container
+.homeContainer
 {
     height: 90vh;
     display: flex;
@@ -18,7 +18,9 @@ body
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding: 0px 10px;
 }
+
 button
 {
     font-size: 20px;
@@ -69,16 +71,42 @@ h1
 }
 .levelContainer
 {
-    margin-top: 15px;
+    margin-top: 20px;
     height: 5vh;
 }
 .attemptContainer
 {
     height: 10vh;
 }
-button:disabled {
-    opacity: 1;  /* Keep full visibility */
-    color: inherit;
-    background: inherit;
-    cursor: not-allowed; /* Optional */
+.gameOver
+{
+    font-size: 70px;
+    font-weight: bolder;
+    color: red;
+    position:absolute;
+    top: 300px;
+    transform: rotate(-45deg);
+}
+.shrink {
+    transition: transform 0.5s ease-in-out, opacity 0.5s;
+    transform: scale(0);
+    opacity: 0;
+}
+@media (max-width: 500px) 
+{
+    .btnContainer
+{
+    width: 90vw;
+    height: 47vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: -15px;
+    
+}
+p
+{
+    font-size: 18px;
+}
 }
