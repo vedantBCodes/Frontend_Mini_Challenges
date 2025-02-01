@@ -14,4 +14,4 @@ Here i will be providing the links of all the  deployed challenges.
 
 7. [TypingSpeedTest](https://typingspeed07.netlify.app)
 
-8. [MemotyGame](https://counternetlify01.netlify.app)
+8. [MemoryGame](https://memorygame08.netlify.app/)
