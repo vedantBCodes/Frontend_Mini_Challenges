@@ -13,3 +13,5 @@ Here i will be providing the links of all the  deployed challenges.
 6.Pixel Art - pixelart06.netlify.app
 
 7.Typing speed test - typingspeed07.netlify.app
+
+8.Memoty Game - memorygame08.netlify.app
