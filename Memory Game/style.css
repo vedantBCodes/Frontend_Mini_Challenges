@@ -109,4 +109,13 @@ p
 {
     font-size: 18px;
 }
+.gameOver
+{
+    font-size: 50px;
+    font-weight: bold;
+    color: red;
+    position:absolute;
+    top: 300px;
+    transform: rotate(-45deg);
+}
 }
