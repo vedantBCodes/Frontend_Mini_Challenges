@@ -46,7 +46,6 @@ function createGameContainer()
                 btn.style.boxShadow='2px 2px 2px black';
                 containerBox.appendChild(btn);
         }
-
 }
 
 function colorRandomButtons()
@@ -56,7 +55,7 @@ function colorRandomButtons()
 
     // Example: Generate n unique numbers between 1 and 9 (n- number of colored buttons)
     let randomNumbers = getRandomNumbers(0, numberOfButtons-1, numberOfColoredButtons);
-    
+    console.log(randomNumbers);
     for(var i=0;i<numberOfButtons;i++)
         {
             for(var j=0;j<randomNumbers.length;j++)
@@ -81,15 +80,33 @@ function colorRandomButtons()
 
 function setAttemptContainer()
 {
-    for(var i=1;i<=attempts;i++)
+    if (window.innerWidth <= 400) 
     {
-        var img=document.createElement('img');
-        img.src='stickPerson2.jpg';
-        img.style.width="30px";
-        img.style.height="30px";
-        attemptContainer.appendChild(img);
+        for(var i=1;i<=attempts;i++)
+            {
+                var img=document.createElement('img');
+                img.src='stickPerson2.jpg';
+                img.style.width="30px";
+                img.style.height="30px";
+                attemptContainer.appendChild(img);
+                attemptContainer.style.marginTop=`${size*15}px`;
+            }
+            
+    } 
+    else 
+    {
+        for(var i=1;i<=attempts;i++)
+            {
+                var img=document.createElement('img');
+                img.src='stickPerson2.jpg';
+                img.style.width="30px";
+                img.style.height="30px";
+                attemptContainer.appendChild(img);
+                attemptContainer.style.marginTop=`0px`;
+            }
     }
-    
+   
+
 }
 
 function addNextBtn()
@@ -123,7 +140,6 @@ function addHomeBtn()
 
 function addHomePage()
 {
-    
     levelContainer.innerHTML='';
     attemptContainer.innerHTML='';
     containerBox.innerHTML='';
@@ -199,7 +215,16 @@ startBtn.addEventListener('click' , () =>{
     homeContainer.style.display = "none";
     createLevelContainer();
     createGameContainer();
+    moveMainContainer();
     setAttemptContainer();
     colorRandomButtons();
     clickTheColoredBtn();
 });
+
+function moveMainContainer()
+{
+    if (window.innerWidth >= 400) 
+    {
+        main.style.marginTop="50px";
+    } 
+}

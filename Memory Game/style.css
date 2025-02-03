@@ -37,6 +37,7 @@ p
 {
     width: 40vw;
     height: 57vh;
+    /* overflow: hidden; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +46,7 @@ p
 }
 main
 {
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -92,12 +94,13 @@ h1
     transform: scale(0);
     opacity: 0;
 }
-@media (max-width: 500px) 
+@media (max-width: 700px) 
 {
     .btnContainer
 {
     width: 90vw;
-    height: 47vh;
+    height: 40vh;
+    /* overflow: hidden; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,4 +121,46 @@ p
     top: 300px;
     transform: rotate(-45deg);
 }
+}
+
+@media (max-width: 400px) 
+{
+    .btnContainer
+{
+    width: 90vw;
+    height: 30vh;
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: -15px;
+    
+}
+.attemptContainer
+{
+    height: 10vh;
+    /* margin-top: 160px; */
+}
+p
+{
+    font-size: 18px;
+}
+.gameOver
+{
+    font-size: 50px;
+    font-weight: bold;
+    color: red;
+    position:absolute;
+    top: 300px;
+    transform: rotate(-45deg);
+}
+.empty
+{
+    height: 7vh;
+}
+}
+.empty
+{
+    height: 0vh;
 }
