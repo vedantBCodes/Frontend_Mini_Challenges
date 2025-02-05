@@ -6,7 +6,10 @@
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
-
+body
+{
+    width: 100vw;
+}
 .container
 {
     height: 70vh;
@@ -24,4 +27,24 @@
 h1{
     font-size: 30px;
     color: blue;
+}
+#reset
+{
+    padding: 7px 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color:rgb(246, 233, 217);
+}
+#reset:hover
+{
+    background-color:antiquewhite;
+}
+.winMessage
+{
+    font-size: 55px;
+    font-weight: bolder;
+    color: red;
+    position:absolute;
+    top: 240px;
+    transform: rotate(-45deg);
 }
