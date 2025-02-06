@@ -107,8 +107,21 @@ function switchButtons(x,y)
             y.style.borderColor='white';
             y.style.boxShadow="0.5px 0.5px 2px 2px white";
             y.style.color='white';
-
         }
+}
+
+function switch14and15() //Creating this funtion to remove an error  which makes game incomplete 
+{
+    x=document.getElementById('14');
+    y=document.getElementById('15');
+    var temp1=x.innerText;
+    x.innerText=y.innerText;
+    y.style.transition='all 0.3s ease';
+    y.innerText=temp1;
+
+    var temp2=x.id;
+    x.id=y.id;
+    y.id=temp2;
 }
 
 function checkForWin()
@@ -135,8 +148,8 @@ function printWinMessage()
 
 createBtnContainer();
 var btns = Array.from(btnContainer.children); //buttons excluding the empty one
-
 shuffleBtns(btns);
+switch14and15();
 colorRightPositionedBtns();
 createLastEmptyBtn();
 updateMoveCount();
@@ -257,6 +270,7 @@ reset.addEventListener('click',()=>{
     btns = Array.from(btnContainer.children); //buttons excluding the empty one
 
     shuffleBtns(btns);
+    switch14and15();
     colorRightPositionedBtns();
     createLastEmptyBtn();
     updateMoveCount();
