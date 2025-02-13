@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+        <h1>Expense Tracker</h1> <br> 
+        <div class="balanceANdBtn">
+            <span id="balance"></span>
+            <button id="addCancelBtn">ADD</button>
+        </div> <br> 
+        <div class="transactionForm">
+            <form action="">
+                <input type="number" placeholder="Amount" id='amountInput' required> <br> <br>
+                <input type="text" placeholder="Description" id="descriptionInput" required> <br> <br>
+                <div class="radio">
+                    <div>
+                        <input type="radio" id="expense1" name="radioBtn" value="expense" required>
+                        <label for="expense1">Expense</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="income1" name="radioBtn" value="income">
+                        <label for="income1">Income</label>
+                    </div>
+                </div> <br>
+                <button id="addTransactionBtn">Add transaction</button>
+            </form>
+        </div> <br> 
+        <div class="expenseAndIncome">
+            <div id="expense">
+                <p></p>
+            </div>
+            <div id="income">
+                <p></p>
+            </div>
+        </div> <br>
+    </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
